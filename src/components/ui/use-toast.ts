@@ -1,12 +1,5 @@
 import * as React from "react"
-
-import type {
-  ToastActionElement,
-  ToastProps,
-} from "@/components/ui/toast"
-
-const TOAST_LIMIT = 1
-const TOAST_REMOVE_DELAY = 1000000
+import type { ToastActionElement, ToastProps } from "./toast"
 
 type ToasterToast = ToastProps & {
   id: string
@@ -15,19 +8,8 @@ type ToasterToast = ToastProps & {
   action?: ToastActionElement
 }
 
-const actionTypes = {
-  ADD_TOAST: "ADD_TOAST",
-  UPDATE_TOAST: "UPDATE_TOAST",
-  DISMISS_TOAST: "DISMISS_TOAST",
-  REMOVE_TOAST: "REMOVE_TOAST",
-} as const
-
-let count = 0
-
-function genId() {
-  count = (count + 1) % Number.MAX_VALUE
-  return count.toString()
-}
+const TOAST_LIMIT = 1
+const TOAST_REMOVE_DELAY = 1000000
 
 type ActionType = typeof actionTypes
 
@@ -51,6 +33,20 @@ type Action =
 
 interface State {
   toasts: ToasterToast[]
+}
+
+const actionTypes = {
+  ADD_TOAST: "ADD_TOAST",
+  UPDATE_TOAST: "UPDATE_TOAST",
+  DISMISS_TOAST: "DISMISS_TOAST",
+  REMOVE_TOAST: "REMOVE_TOAST",
+} as const
+
+let count = 0
+
+function genId() {
+  count = (count + 1) % Number.MAX_VALUE
+  return count.toString()
 }
 
 const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>()
