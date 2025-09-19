@@ -1,5 +1,5 @@
 import { FiHeart, FiMapPin, FiMail, FiPhone, FiInstagram, FiFacebook, FiTwitter } from "react-icons/fi";
-import logo from "/assets/hands-logo.svg";
+import logo from "@/assets/hands-logo.svg";
 
 const Footer = () => {
   return (

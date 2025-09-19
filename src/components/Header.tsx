@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import logo from "/assets/hands-logo.svg";
+import logo from "@/assets/hands-logo.svg";
 import { FiHeart, FiGift, FiTrendingUp, FiBell, FiUser } from "react-icons/fi";
 
 const HEADER_HEIGHT = 72; // px, ajusta si tu header es más alto
