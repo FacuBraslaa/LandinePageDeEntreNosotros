@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/hands-logo.svg";
+import logo from "/assets/hands-logo.svg";
 import { Heart } from "@/components/icons/BasicIcons";
 import { FiUsers } from "react-icons/fi";
 
@@ -14,7 +14,7 @@ const Hero = () => {
               <Heart className="h-4 w-4" />
               Ayuda a quien más lo necesita
             </div>
-            <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-gray-900">
+            <h1 id="inicio-titulo" className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-gray-900">
               Donaciones que
               <br />
               <span className="text-green-700">transforman vidas</span>

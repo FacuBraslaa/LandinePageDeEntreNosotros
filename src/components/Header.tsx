@@ -1,29 +1,49 @@
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/hands-logo.svg";
-import { Heart } from "@/components/icons/BasicIcons";
-import { FiBell, FiUser } from "react-icons/fi";
+import logo from "/assets/hands-logo.svg";
+import { FiHeart, FiGift, FiTrendingUp, FiBell, FiUser } from "react-icons/fi";
+
+const HEADER_HEIGHT = 72; // px, ajusta si tu header es más alto
 
 const Header = () => {
+  // Scroll suave y centrado al título de impacto
+  const handleImpactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const title = document.getElementById("impacto-titulo");
+    if (title) {
+      const y = title.getBoundingClientRect().top + window.scrollY - 72 - 24;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+  // Scroll suave y centrado al título de inicio
+  const handleInicioClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const title = document.getElementById("inicio-titulo");
+    if (title) {
+      const y = title.getBoundingClientRect().top + window.scrollY - 120; // 120px de aire visual
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-white">
       <div className="container max-w-screen-xl flex h-16 items-center justify-between mx-auto">
         {/* Logo y navegación */}
-        <div className="flex items-center gap-8">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center gap-10">
+          <div className="flex items-center gap-2">
             <img src={logo} alt="Entre Nosotros" className="h-7 w-7" />
             <span className="text-lg font-bold text-green-700">Entre Nosotros</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#inicio" className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-green-700 transition-colors">
-              <Heart className="h-4 w-4" />
+            <a href="#inicio" onClick={handleInicioClick} className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-green-700 transition-colors cursor-pointer">
+              <FiHeart className="h-4 w-4" />
               Inicio
             </a>
             <a href="#como-funciona" className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-green-700 transition-colors">
-              <span role="img" aria-label="gift" className="h-4 w-4">🎁</span>
+              <FiGift className="h-4 w-4" />
               Cómo funciona
             </a>
-            <a href="#impacto" className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-green-700 transition-colors">
-              <Heart className="h-4 w-4" />
+            <a href="#impacto" onClick={handleImpactClick} className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-green-700 transition-colors cursor-pointer">
+              <FiTrendingUp className="h-4 w-4" />
               Nuestro impacto
             </a>
           </nav>
