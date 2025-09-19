@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, Quote, Heart } from "lucide-react";
+import { Heart } from "@/components/icons/BasicIcons";
+const Star = ({ className = "" }) => <span className={className}>⭐</span>;
+const Quote = ({ className = "" }) => <span className={className}>❝</span>;
 
 const testimonials = [
   {

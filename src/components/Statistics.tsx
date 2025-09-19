@@ -1,3 +1,6 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Heart, Users, Building, MapPin, TrendingUp, Clock } from "@/components/icons/BasicIcons";
+
 const stats = [
   {
     icon: Heart,

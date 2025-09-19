@@ -1,5 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Home, Gift, MapPin, Bell, User } from "lucide-react";
+import { Heart } from "@/components/icons/BasicIcons";
+const Home = ({ className = "" }) => <span className={className}>🏠</span>;
+const Gift = ({ className = "" }) => <span className={className}>🎁</span>;
+const MapPin = ({ className = "" }) => <span className={className}>📍</span>;
+const Bell = ({ className = "" }) => <span className={className}>🔔</span>;
+const User = ({ className = "" }) => <span className={className}>👤</span>;
 import logo from "@/assets/hands-logo.svg";
 
 const Header = () => {

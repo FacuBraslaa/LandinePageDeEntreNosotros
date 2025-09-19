@@ -1,5 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Users, MapPin, Star, Shield, Smartphone } from "lucide-react";
+import { Heart, Users, MapPin } from "@/components/icons/BasicIcons";
+const Star = ({ className = "" }) => <span className={className}>⭐</span>;
+const Shield = ({ className = "" }) => <span className={className}>🛡️</span>;
+const Smartphone = ({ className = "" }) => <span className={className}>📱</span>;
 
 const features = [
   {

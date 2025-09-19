@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Heart, ArrowRight, Users, Gift } from "lucide-react";
-import logo from "@/assets/hands-logo.svg";
+import { Heart } from "@/components/icons/BasicIcons";
+const ArrowRight = ({ className = "" }) => <span className={className}>→</span>;
+const Users = ({ className = "" }) => <span className={className}>👥</span>;
+const Gift = ({ className = "" }) => <span className={className}>🎁</span>;
+import logo from "@/assets/hands-logo.svg"; // Ensure this path is correct
 
 const Hero = () => {
   return (

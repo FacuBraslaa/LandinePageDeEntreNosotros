@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { UserPlus, Search, Heart, CheckCircle } from "lucide-react";
+import { Heart } from "@/components/icons/BasicIcons";
+const UserPlus = ({ className = "" }) => <span className={className}>➕</span>;
+const Search = ({ className = "" }) => <span className={className}>🔍</span>;
+const CheckCircle = ({ className = "" }) => <span className={className}>✔️</span>;
 
 const steps = [
   {
