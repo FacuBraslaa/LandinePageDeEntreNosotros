@@ -1,97 +1,76 @@
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/hands-logo.svg";
 import { Heart } from "@/components/icons/BasicIcons";
-const ArrowRight = ({ className = "" }) => <span className={className}>→</span>;
-const Users = ({ className = "" }) => <span className={className}>👥</span>;
-const Gift = ({ className = "" }) => <span className={className}>🎁</span>;
-import logo from "@/assets/hands-logo.svg"; // Ensure this path is correct
+import { FiUsers } from "react-icons/fi";
 
 const Hero = () => {
   return (
-    <section id="inicio" className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-hero opacity-5"></div>
-      
-      <div className="container max-w-screen-xl relative">
+    <section id="inicio" className="bg-[#f6faf8] py-20 lg:py-28">
+      <div className="container max-w-screen-xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Heart className="h-4 w-4" />
               Ayuda a quien más lo necesita
             </div>
-            
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-gray-900">
               Donaciones que
-              <div className="flex items-center gap-3">
-                <img src={logo} alt="Entre Nosotros" className="h-10 w-10" />
-                <span className="text-primary">transforman vidas</span>
-              </div>
+              <br />
+              <span className="text-green-700">transforman vidas</span>
             </h1>
-            
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg text-gray-500 mb-8 leading-relaxed">
               Facilitamos el contacto entre donantes y organizaciones locales.
+              <br />
               Tu ayuda llega directamente a quien la necesita, sin intermediarios.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="hero" size="lg">
-                Comenzar a ayudar
-                <ArrowRight className="h-5 w-5" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+              <Button className="bg-green-700 hover:bg-green-800 text-white font-semibold rounded-md px-6 py-3 text-base shadow-none">
+                Comenzar a ayudar <span className="ml-2">→</span>
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" className="bg-white border border-gray-300 text-gray-900 font-semibold rounded-md px-6 py-3 text-base">
                 Conoce más
               </Button>
             </div>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t">
+            <div className="flex gap-12 justify-center lg:justify-start pt-8 border-t border-gray-200">
               <div className="text-center lg:text-left">
-                <div className="text-2xl font-bold text-primary">320+</div>
-                <div className="text-sm text-muted-foreground">Donaciones completadas</div>
+                <div className="text-2xl font-bold text-green-700">320+</div>
+                <div className="text-sm text-gray-500">Donaciones completadas</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl font-bold text-primary">75</div>
-                <div className="text-sm text-muted-foreground">Voluntarios activos</div>
+                <div className="text-2xl font-bold text-green-700">75</div>
+                <div className="text-sm text-gray-500">Voluntarios activos</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl font-bold text-primary">12</div>
-                <div className="text-sm text-muted-foreground">Organizaciones locales</div>
+                <div className="text-2xl font-bold text-green-700">12</div>
+                <div className="text-sm text-gray-500">Organizaciones locales</div>
               </div>
             </div>
           </div>
-          
-          {/* Visual */}
-          <div className="relative">
-            <div className="relative bg-gradient-card rounded-3xl p-8 shadow-elegant">
+          {/* Card lateral */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                  <Users className="h-6 w-6 text-primary-foreground" />
+                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                  <FiUsers className="h-6 w-6 text-green-700" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Comedor Los Girasoles</h3>
-                <p className="text-sm text-muted-foreground">Villa Soldati</p>
+                  <h3 className="font-bold text-gray-900">Comedor Los Girasoles</h3>
+                  <p className="text-sm text-gray-500">Villa Soldati</p>
                 </div>
               </div>
-              
-              <p className="text-sm mb-4">
+              <p className="text-sm text-gray-700 mb-4">
                 Necesitamos alimentos no perecederos y útiles escolares para 45 niños que asisten diariamente a nuestro comedor.
               </p>
-              
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-1">
-                  <span className="text-yellow-500">★</span>
-                  <span className="text-sm font-medium">4.6</span>
-                  <span className="text-sm text-muted-foreground">• 28 donaciones</span>
-                </div>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-yellow-500">★</span>
+                <span className="text-sm font-semibold text-gray-900">4.6</span>
+                <span className="text-sm text-gray-500">· 28 donaciones</span>
               </div>
-              
-              <Button variant="donation" size="sm" className="w-full">
-                <Heart className="h-4 w-4" />
-                Me interesa
+              <Button className="bg-green-700 hover:bg-green-800 text-white font-semibold rounded-md w-full py-2">
+                <Heart className="h-4 w-4 mr-2" /> Me interesa
               </Button>
             </div>
-            
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-xl"></div>
-            <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
           </div>
         </div>
       </div>

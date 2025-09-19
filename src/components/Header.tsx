@@ -1,49 +1,43 @@
 import { Button } from "@/components/ui/button";
-import { Heart } from "@/components/icons/BasicIcons";
-const Home = ({ className = "" }) => <span className={className}>🏠</span>;
-const Gift = ({ className = "" }) => <span className={className}>🎁</span>;
-const MapPin = ({ className = "" }) => <span className={className}>📍</span>;
-const Bell = ({ className = "" }) => <span className={className}>🔔</span>;
-const User = ({ className = "" }) => <span className={className}>👤</span>;
 import logo from "@/assets/hands-logo.svg";
+import { Heart } from "@/components/icons/BasicIcons";
+import { FiBell, FiUser } from "react-icons/fi";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 max-w-screen-xl items-center justify-between">
-        {/* Logo and Navigation */}
+    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <div className="container max-w-screen-xl flex h-16 items-center justify-between mx-auto">
+        {/* Logo y navegación */}
         <div className="flex items-center gap-8">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Entre Nosotros" className="h-10 w-10" />
-            <span className="text-xl font-semibold text-primary">Entre Nosotros</span>
+            <img src={logo} alt="Entre Nosotros" className="h-7 w-7" />
+            <span className="text-lg font-bold text-green-700">Entre Nosotros</span>
           </div>
-          
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#inicio" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
-              <Home className="h-4 w-4" />
+            <a href="#inicio" className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-green-700 transition-colors">
+              <Heart className="h-4 w-4" />
               Inicio
             </a>
-            <a href="#como-funciona" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
-              <Gift className="h-4 w-4" />
+            <a href="#como-funciona" className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-green-700 transition-colors">
+              <span role="img" aria-label="gift" className="h-4 w-4">🎁</span>
               Cómo funciona
             </a>
-            <a href="#impacto" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+            <a href="#impacto" className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-green-700 transition-colors">
               <Heart className="h-4 w-4" />
               Nuestro impacto
             </a>
           </nav>
         </div>
-
-        {/* User actions */}
+        {/* Acciones usuario */}
         <div className="flex items-center gap-4">
-          <Button variant="ghost" size="sm" className="hidden md:flex">
-            <Bell className="h-4 w-4" />
-          </Button>
-          <Button variant="ghost" size="sm" className="hidden md:flex">
-            <User className="h-4 w-4" />
+          <button className="hidden md:flex items-center justify-center text-gray-700 hover:text-green-700 transition-colors">
+            <FiBell className="h-5 w-5" />
+          </button>
+          <button className="hidden md:flex items-center gap-2 text-gray-700 hover:text-green-700 text-sm font-medium transition-colors">
+            <FiUser className="h-5 w-5" />
             Ingresar
-          </Button>
-          <Button variant="donation" size="sm">
+          </button>
+          <Button variant="default" size="sm" className="bg-green-700 hover:bg-green-800 text-white font-semibold rounded-md shadow-none px-5 py-2">
             Donar ahora
           </Button>
         </div>
